@@ -16,15 +16,16 @@ The **Argent Data Systems WR-01** is a compact wind and rain sensor with robust 
 
 ## Contents
 
+```
 examples/
-+-- arduino/ # Arduino sketches using Modbus or JSON
-+-- raspberry-pi/ # Python scripts for serial reading
+├── arduino/ # Arduino sketches using Modbus or JSON
+├── raspberry-pi/ # Python scripts for serial reading
 docs/
-+-- WR-01_Manual.pdf # Full user manual
+└── WR-01_Manual.pdf # Full user manual
 
 ---
 
-## ?? Example JSON Output
+## Example JSON Output
 
 ```json
 {
