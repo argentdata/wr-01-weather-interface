@@ -22,6 +22,7 @@ examples/
 ├── raspberry-pi/ # Python scripts for serial reading
 docs/
 └── WR-01_Manual.pdf # Full user manual
+```
 
 ---
 
@@ -38,3 +39,4 @@ docs/
   "rain_total": 0.27,
   "last_rain": 0
 }
+```
