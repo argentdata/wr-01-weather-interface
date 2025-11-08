@@ -5,11 +5,6 @@
 # data in JSON format from the Argent Data Systems WR-01 wind/rain sensor
 # interface.
 #
-# The WR-01 must be configured for JSON output mode. For the TTL/RS-232 port,
-# set register 20 to value 32 (command "!20=32"). For the RS-485 port,
-# set register 18 to value 32 (command "!18=32"). Be sure to use the "!save"
-# command to save the setting.
-#
 # To use with a Raspberry Pi, first ensure you have the serial port enabled
 # (under 'interfaces' in Control Centre). Wire header pin 2 to VIN, pin 6
 # to GND, pin 8 to RX, and pin 10 to TX. This will power the WR-01 from the
@@ -29,6 +24,10 @@ import json
 
 # Open serial port - adjust port and baud rate as needed
 ser = serial.Serial('/dev/ttyS0', 115200, timeout=1)
+
+# Set interface to JSON mode
+ser.write(b'!20=32\r')
+ser.flush()
 
 while True:
     try:
