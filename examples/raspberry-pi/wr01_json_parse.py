@@ -10,6 +10,11 @@
 # set register 18 to value 32 (command "!18=32"). Be sure to use the "!save"
 # command to save the setting.
 #
+# To use with a Raspberry Pi, first ensure you have the serial port enabled
+# (under 'interfaces' in Control Centre). Wire header pin 2 to VIN, pin 6
+# to GND, pin 8 to RX, and pin 10 to TX. This will power the WR-01 from the
+# Raspberry Pi's 5v supply and use the TTL serial port.
+#
 # This script demonstrates the basics of reading a single line from the
 # serial port, parsing the line as JSON, and extracting a few values.
 # wind_dir and wind_speed values are grouped by averaging intervals under
@@ -23,9 +28,7 @@ import serial
 import json
 
 # Open serial port - adjust port and baud rate as needed
-ser = serial.Serial('COM5', 115200, timeout=1)
-
-print("Listening on COM5 at 115200 baud...")
+ser = serial.Serial('/dev/ttyS0', 115200, timeout=1)
 
 while True:
     try:
